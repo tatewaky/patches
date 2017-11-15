@@ -1,0 +1,27 @@
+diff --git a/modules/contrib/popup_message/js/popup.js b/modules/contrib/popup_message/js/popup.js
+index b98986fb9..782862b5d 100644
+--- a/modules/contrib/popup_message/js/popup.js
++++ b/modules/contrib/popup_message/js/popup.js
+@@ -111,16 +111,18 @@
+     // Closing popup.
+     // Click the x event!
+     jQuery('#popup-message-close').click(function () {
+-      popup_message_disable_popup();
++      //popup_message_disable_popup();
+     });
+     // Click out event!
+-    jQuery('#popup-message-background').click(function () {
+-      popup_message_disable_popup();
++    jQuery('#popupacceptbutton').click(function () {
++      if($('#popupaccept').is(':checked') === true){
++        popup_message_disable_popup();
++      }      
+     });
+     // Press Escape event!
+     jQuery(document).keypress(function (e) {
+       if (e.keyCode === 27 && popupStatus === 1) {
+-        popup_message_disable_popup();
++        //popup_message_disable_popup();
+       }
+     });
+   }
